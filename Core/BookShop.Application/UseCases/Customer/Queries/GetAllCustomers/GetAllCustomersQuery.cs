@@ -10,32 +10,32 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookShop.Application.UseCases.Property.Queries.GetAll
+namespace BookShop.Application.UseCases.Customer.Queries.GetAllCustomers
 {
-    public class GetAllQuery : IRequest<List<GetAllResponseDto>>
+    public class GetAllCustomersQuery : IRequest<List<GetAllCustomersResponseDto>>
     {
     }
-    public class GetAllQueryHandler : IRequestHandler<GetAllQuery, List<GetAllResponseDto>>
+    public class GetAllQueryHandler : IRequestHandler<GetAllCustomersQuery, List<GetAllCustomersResponseDto>>
     {
         public IGenericRepository<BookShop.Domain.Entities.Customer> _genericRepository;
         public IMapper _mapper;
         private IEmailSender _emailSender;
 
-        private static readonly ILog _logger = LogManager.GetLogger(typeof(GetAllQuery));
+        private static readonly ILog _logger = LogManager.GetLogger(typeof(GetAllCustomersQuery));
         public GetAllQueryHandler(IGenericRepository<BookShop.Domain.Entities.Customer> genericRepository, IMapper mapper, IEmailSender emailSender)
         {
             _genericRepository = genericRepository;
             _mapper = mapper;
             _emailSender = emailSender;
         }
-        public async Task<List<GetAllResponseDto>> Handle(GetAllQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetAllCustomersResponseDto>> Handle(GetAllCustomersQuery request, CancellationToken cancellationToken)
         {
             try
             {
                 _logger.Debug($"Get All Customer Start");
                 var result = await _genericRepository.GetAllAsync();
                 _logger.Debug($"Get All Customer End");
-                return _mapper.Map<List<GetAllResponseDto>>(result);
+                return _mapper.Map<List<GetAllCustomersResponseDto>>(result);
             }
             catch (Exception ex) {
                 _logger.Error($"Get all Customer exception fired: Exception {ex}");

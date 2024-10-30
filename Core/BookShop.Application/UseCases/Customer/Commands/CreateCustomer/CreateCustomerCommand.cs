@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using BookShop.Application.Repositories;
-using BookShop.Application.UseCases.Property.Queries.GetAll;
 using BookShop.Application.Utility;
 using log4net;
 using MediatR;
@@ -10,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookShop.Application.UseCases.Customer.Commands.Create
+namespace BookShop.Application.UseCases.Customer.Commands.CreateCustomer
 {
     public class CreateCustomerCommand : IRequest<bool>
     {

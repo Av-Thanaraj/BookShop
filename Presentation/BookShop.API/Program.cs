@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using BookShop.API.Controllers;
 using BookShop.Application;
 using BookShop.Application.Repositories;
-using BookShop.Application.UseCases.Property.Queries.GetAll;
 using BookShop.Infrastructure.BaseDbContext;
 using BookShop.Infrastructure.Repositories;
 using log4net.Appender;

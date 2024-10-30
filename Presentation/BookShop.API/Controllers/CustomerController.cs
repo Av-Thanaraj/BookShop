@@ -2,9 +2,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using BookShop.Application.UseCases.Property.Queries.GetAll;
 using System.Reflection;
-using BookShop.Application.UseCases.Customer.Commands.Create;
+using BookShop.Application.UseCases.Customer.Commands.CreateCustomer;
+using BookShop.Application.UseCases.Customer.Queries.GetAllCustomers;
 
 namespace BookShop.API.Controllers
 {
@@ -22,7 +22,7 @@ namespace BookShop.API.Controllers
         [Route("api/v1/Customers")]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _mediator.Send(new GetAllQuery()));
+            return Ok(await _mediator.Send(new GetAllCustomersQuery()));
         }
 
         [HttpPost]

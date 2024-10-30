@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
-using BookShop.Application.UseCases.Customer.Commands.Create;
-using BookShop.Application.UseCases.Property.Queries.GetAll;
+using BookShop.Application.UseCases.Customer.Commands.CreateCustomer;
+using BookShop.Application.UseCases.Customer.Queries.GetAllCustomers;
+using BookShop.Application.UseCases.User.Commands.CreateUser;
+using BookShop.Application.UseCases.User.Queries.GetAllUsers;
 using BookShop.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,11 +16,15 @@ namespace BookShop.Application.Mapper
     {
         public MappingProfile()
         {
-            CreateMap<Customer, GetAllResponseDto>()
+            CreateMap<Customer, GetAllCustomersResponseDto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
 
-            CreateMap<CreateCustomerRequestDto, Customer>()
-                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName)).ReverseMap();
+            CreateMap<CreateCustomerRequestDto, Customer>().ReverseMap();
+
+            CreateMap<User, GetAllUsersResponseDto>()
+               .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
+
+            CreateMap<CreateUserRequestDto, User>().ReverseMap();
         }
     }
 }
