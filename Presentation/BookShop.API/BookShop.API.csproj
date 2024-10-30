@@ -20,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Core\BookShop.Application\BookShop.Application.csproj" />
     <ProjectReference Include="..\..\Core\BookShop.Domain\BookShop.Domain.csproj" />
     <ProjectReference Include="..\..\Infrastructure\BookShop.Infrastructure\BookShop.Infrastructure.csproj" />

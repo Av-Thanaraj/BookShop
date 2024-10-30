@@ -18,7 +18,7 @@ namespace BookShop.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] User loginUser)
         {
-            var user = await _authService.ValidateUserAsync(loginUser.Username, loginUser.Password);
+            var user = await _authService.ValidateUserAsync(loginUser.Username, loginUser.PasswordHash);
 
             if (user == null)
             {

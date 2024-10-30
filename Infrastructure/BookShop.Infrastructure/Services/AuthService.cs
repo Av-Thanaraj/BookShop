@@ -46,7 +46,7 @@ namespace BookShop.Infrastructure.Services
                 {
                     Id = 0,
                     Username = "string",
-                    Password = "string"
+                    PasswordHash = "string"
                 });
             }
             return null;
