@@ -22,7 +22,7 @@ namespace BookShop.API.Controllers
 
             if (user == null)
             {
-                return Unauthorized();
+                return Unauthorized(); 
             }
 
             var token = _authService.GenerateJwtToken(user);
