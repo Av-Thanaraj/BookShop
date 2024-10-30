@@ -77,7 +77,7 @@ namespace BookShop.API
             var consumer = new RabbitMqConsumer();
             consumer.StartConsuming();
 
-            app.UseMiddleware<RequestLoggingMiddleware>();
+            //app.UseMiddleware<RequestLoggingMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
