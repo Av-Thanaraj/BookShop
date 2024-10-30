@@ -16,6 +16,7 @@ using BookShop.Application.Common;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using BookShop.Infrastructure;
 
 namespace BookShop.API
 {
@@ -34,12 +35,10 @@ namespace BookShop.API
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddScoped<IAuthService, AuthService>();
+
             // Register the DbContext with the services
             builder.Services.AddDbContext<BookShopDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("BookShopDb")));
-            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
 
 
             var jwtSettings = builder.Configuration.GetSection("JwtSettings");
