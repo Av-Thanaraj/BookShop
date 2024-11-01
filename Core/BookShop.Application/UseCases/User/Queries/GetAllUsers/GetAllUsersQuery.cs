@@ -16,7 +16,7 @@ namespace BookShop.Application.UseCases.User.Queries.GetAllUsers
     }
     public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, List<GetAllUsersResponseDto>>
     {
-        public IGenericRepository<BookShop.Domain.Entities.User> _genericRepository;
+        protected readonly IGenericRepository<BookShop.Domain.Entities.User> _genericRepository;
         public IMapper _mapper;
         private IEmailSender _emailSender;
 

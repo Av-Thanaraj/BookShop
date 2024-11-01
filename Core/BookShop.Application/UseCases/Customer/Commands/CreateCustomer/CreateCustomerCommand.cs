@@ -17,7 +17,7 @@ namespace BookShop.Application.UseCases.Customer.Commands.CreateCustomer
     }
     public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, bool>
     {
-        public IGenericRepository<BookShop.Domain.Entities.Customer> _genericRepository;
+        protected readonly IGenericRepository<BookShop.Domain.Entities.Customer> _genericRepository;
         public IMapper _mapper;
         private IEmailSender _emailSender;
 
